@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calc.css">
+    <script src="https://kit.fontawesome.com/6c14a872c1.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+</head>
+
+<body>
+    <div class="d-flex justify-content-center align-items-center mt-5">
+        <div style="background-color: rgb(32,32,32); width: 30%;" class=" h-auto ">
+            <div class="top d-flex align-items-center">
+                <div class="d-flex gap-2 mt-2 ">
+                    <i class="fa-solid fa-calculator"></i>
+                    <h6>Calculator</h6>
+                </div>
+                <div class="tt d-flex align-items-center">
+                    <i class="fa-solid fa-window-minimize"></i>
+                    <i class="fa-solid fa-window-maximize"></i>
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+
+            </div>
+            <div class="top-down">
+                <div class="d-flex align-items-center gap-2 menu">
+                    <span class="material-symbols-outlined">
+                        menu
+                    </span>
+                    <h4 style="color: white;">Standard</h4>
+                </div>
+                <div class="h-auto w-100 inp">
+                    <input id="screen1" type="text" class="w-100">
+                    <input id="screen2" type="text" placeholder="0" class="w-100">
+                </div>
+            </div>
+            <div id="btn" class="btn flex-wrap d-flex justify-content-center">
+                <button onclick="operator('%')" onmouseover="this.style.backgroundColor='rgb(59,59,59)';"
+                    onmouseout="this.style.backgroundColor='rgb(50, 50, 50)';" style="background-color: rgb(50,50,50);"
+                    class=" border-0 rounded-1">%</button>
+                <button onclick="clearAll()" onmouseover="this.style.backgroundColor='rgb(59,59,59)';"
+                    onmouseout="this.style.backgroundColor='rgb(50, 50, 50)';" style="background-color: rgb(50,50,50); "
+                    class=" border-0 rounded-1">CE</button>
+                <button onclick="clear()" onmouseover="this.style.backgroundColor='rgb(59,59,59)';"
+                    onmouseout="this.style.backgroundColor='rgb(50, 50, 50)';" style="background-color: rgb(50,50,50);"
+                    class=" border-0 rounded-1">C</button>
+                <button onclick="cancel()" onmouseover="this.style.backgroundColor='rgb(59,59,59)';"
+                    onmouseout="this.style.backgroundColor='rgb(50, 50, 50)';" style="background-color: rgb(50,50,50);"
+                    class=" border-0 rounded-1"><i class="fa-sharp fa-solid fa-rectangle-xmark"></i></button>
+
+                <button onclick="operator('1/')" onmouseover="this.style.backgroundColor='rgb(59,59,59)';"
+                    onmouseout="this.style.backgroundColor='rgb(50, 50, 50)';" style="background-color: rgb(50,50,50);"
+                    class=" border-0 rounded-1">1/x</button>
+                <button onclick="operator('^')" onmouseover="this.style.backgroundColor='rgb(59,59,59)';"
+                    onmouseout="this.style.backgroundColor='rgb(50, 50, 50)';" style="background-color: rgb(50,50,50);"
+                    class=" border-0 rounded-1">x^2</button>
+                <button onclick="operator('√')" onmouseover="this.style.backgroundColor='rgb(59,59,59)';"
+                    onmouseout="this.style.backgroundColor='rgb(50, 50, 50)';" style="background-color: rgb(50,50,50);"
+                    class=" border-0 rounded-1"><i class="fa-solid fa-square-root-variable"></i></button>
+                <button onclick="operator('➗')" onmouseover="this.style.backgroundColor='rgb(59,59,59)';"
+                    onmouseout="this.style.backgroundColor='rgb(50, 50, 50)';" style="background-color: rgb(50,50,50);"
+                    class=" border-0 rounded-1">➗</button>
+
+                <button class=" border-0 rounded-1" onclick="num(7)">7</button>
+                <button class=" border-0 rounded-1" onclick="num(8)">8</button>
+                <button class=" border-0 rounded-1" onclick="num(9)">9</button>
+                <button onclick="operator('x')" onmouseover="this.style.backgroundColor='rgb(59,59,59)';"
+                    onmouseout="this.style.backgroundColor='rgb(50, 50, 50)';" style="background-color: rgb(50,50,50);"
+                    class=" border-0 rounded-1">x</button>
+
+                <button class=" border-0 rounded-1" onclick="num(4)">4</button>
+                <button class=" border-0 rounded-1" onclick="num(5)">5</button>
+                <button class=" border-0 rounded-1" onclick="num(6)">6</button>
+                <button onclick="operator('-')" onmouseover="this.style.backgroundColor='rgb(59,59,59)';"
+                    onmouseout="this.style.backgroundColor='rgb(50, 50, 50)';" style="background-color: rgb(50,50,50);"
+                    class=" border-0 rounded-1">-</button>
+
+                <button class=" border-0 rounded-1" onclick="num(1)">1</button>
+                <button class=" border-0 rounded-1" onclick="num(2)">2</button>
+                <button class=" border-0 rounded-1" onclick="num(3)">3</button>
+                <button onclick="operator('+')" onmouseover="this.style.backgroundColor='rgb(59,59,59)';"
+                    onmouseout="this.style.backgroundColor='rgb(50, 50, 50)';" style="background-color: rgb(50,50,50);"
+                    class=" border-0 rounded-1">+</button>
+
+                <button class=" border-0 rounded-1">+/-</button>
+                <button class=" border-0 rounded-1" onclick="num(0)">0</button>
+                <button class=" border-0 rounded-1" onclick="num('.')">.</button>
+                <button class=" border-0 rounded-1" onclick="equals()"
+                    style="background-color: rgb(209, 141, 183);">=</button>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+<script>
+    let currentOperator;
+    let canClear = false;
+    let canCalc = false;
+    let screen1 = document.getElementById('screen1');
+    let screen2 = document.getElementById('screen2');
+    console.log(screen1);
+    
+
+
+    function num(number) {
+        if (canClear) {
+            screen2.value = number;
+        } else {
+
+            screen2.value += number;
+        }
+        canClear = false;
+        
+    }
+    function operator(oper) {
+        currentOperator = oper
+        screen1.value = `${screen2.value} ${oper}`
+        screen2.value = ''
+        // canClear = true
+        canCalc = true
+    }
+    function equals(equal) {
+
+        if (screen2.value) {
+            screen1.value += `${screen2.value} =`;
+            let result;
+            if (currentOperator === '+') {
+                result = parseFloat(screen1.value) + parseFloat(screen2.value);
+            } else if (currentOperator === '-') {
+                result = parseFloat(screen1.value) - parseFloat(screen2.value);
+            } else if (currentOperator === 'x') {
+                result = parseFloat(screen1.value) * parseFloat(screen2.value);
+            } else if (currentOperator === '➗') {
+                result = parseFloat(screen1.value) / parseFloat(screen2.value);
+            }else if (currentOperator === '^'){
+                result = parseFloat(screen1.value) ** parseFloat(screen2.value);
+            }else if (currentOperator === '√'){
+                result =  Math.sqrt(parseFloat(screen2.value))
+            }else if (currentOperator === '1/'){
+                result = 1/parseFloat(screen2.value)
+            }else if (currentOperator === '%'){
+                result = parseFloat(screen1.value) % parseFloat(screen2.value);
+            }
+            screen2.value = result;
+         canClear = true;
+        }
+    }
+    function cancel() {
+        let scr = screen2.value
+        screen2.value = scr.slice(0, -1)
+        //    str.slice(3) 
+    }
+    function clearAll() {
+        screen2.value = ''
+        screen1.value = ''
+        currentOperator = ''
+    }
+    function clear() {
+        screen2.value = ''
+        canClear = false
+    }
+    //so u wont forget next thing is to make the equals to work so that screen2 will display in screen1 then answer will display in screen2
+
+</script>
+
+</html>

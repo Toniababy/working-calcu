@@ -1,0 +1,85 @@
+    h5 {
+        color: white;
+    }
+    #all{
+        margin: 2px 20px;
+    }
+    #btn button {
+        background-color: rgb(59, 59, 59);
+        margin: 2px 3px;
+        height: 8vh;
+        width: 100px;
+        color: white;
+    }
+
+    #btn button:hover {
+        background-color: rgb(50, 50, 50);
+    }
+
+    .top-down {
+        margin-top: 10px;
+    }
+
+    .top {
+        color: white;
+        margin-left: 30px;
+    }
+   
+    .menu{
+        padding: 0 30px;
+    }
+    .inp{
+        padding: 0 30px;
+    }
+
+    .tt {
+        margin-left: 60%;
+        gap: 15px;
+    }
+
+    input {
+        display: block;
+        outline: none;
+        text-align: right;
+        border: none;
+    }
+
+    input:first-child {
+        color: rgb(190, 179, 179);
+        background-color: rgb(32, 32, 32);
+        font-size: 20px;
+    }
+
+    input:last-child {
+        color: rgb(255, 255, 255);
+        background-color: rgb(32, 32, 32);
+        height: 10vh;
+        font-size: 40px;
+    }
+
+    ::placeholder {
+        color: rgb(255, 255, 255);
+        text-align: right;
+        font-size: 40px;
+    }
+    span {
+        color: white;
+    }
+
+    @media (max-width: 1499px) and (min-width: 1166px) {
+        #btn button {
+            width: 75px;
+        }
+    }
+
+
+    @media (max-width: 1166px) and (min-width: 1146px) {
+        #btn button {
+            width: 65px;
+        }
+    }
+    @media (max-width: 1145px) and (min-width: 999px) {
+        #btn button {
+            width: 55px;
+        }
+    }
